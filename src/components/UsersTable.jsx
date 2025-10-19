@@ -38,7 +38,7 @@ export default function UsersCards() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>All Users Overview</h2>
+      <h2 style={styles.title}>All Users</h2>
 
       {/* Filters */}
       <div style={styles.filters}>
@@ -174,6 +174,12 @@ function renderTotals(totals, role) {
     items = [
       ["Shifts", totals.shifts, 0],
       ["Overtime", totals.overtime, 0],
+      ["Holidays Shifts", totals.holidaysShifts, 0],
+      ["Holidays Overtime", totals.holidaysOvertime, 0],
+      ["Shifts Cost", totals.shiftsCost, 2, "EGP"],
+      ["Overtime Cost", totals.overtimeCost, 2, "EGP"],
+      ["Holidays Shifts Cost", totals.holidaysShiftsCost, 2, "EGP"],
+      ["Holidays Overtime Cost", totals.holidaysOvertimeCost, 2, "EGP"],
       ["Salary", totals.salary, 2, "EGP"],
       ["Commission", totals.commission, 2, "EGP"],
       ["Total Salary", totals.totalSalary, 2, "EGP"],
@@ -187,6 +193,12 @@ function renderTotals(totals, role) {
     items = [
       ["Shifts", totals.shifts, 0],
       ["Overtime", totals.overtime, 0],
+      ["Holidays Shifts", totals.holidaysShifts, 0],
+      ["Holidays Overtime", totals.holidaysOvertime, 0],
+      ["Shifts Cost", totals.shiftsCost, 2, "EGP"],
+      ["Overtime Cost", totals.overtimeCost, 2, "EGP"],
+      ["Holidays Shifts Cost", totals.holidaysShiftsCost, 2, "EGP"],
+      ["Holidays Overtime Cost", totals.holidaysOvertimeCost, 2, "EGP"],
       ["Salary", totals.salary, 2, "EGP"],
       ["Commission", totals.commission, 2, "EGP"],
       ["Paid", totals.paid, 2, "EGP"],
@@ -239,7 +251,7 @@ function renderTotals(totals, role) {
 
 const styles = {
   container: {
-    padding: "30px",
+    padding: "20px",
     backgroundColor: "#f4f6f8",
     fontFamily: "Arial, sans-serif",
     minHeight: "100vh",
@@ -248,7 +260,7 @@ const styles = {
     textAlign: "center",
     color: "#333",
     marginBottom: "25px",
-    fontSize: "26px",
+    fontSize: "32px", // زودت من 26px
   },
   filters: {
     display: "flex",
@@ -257,52 +269,74 @@ const styles = {
     gap: "15px",
     marginBottom: "30px",
   },
-  label: { marginRight: "8px", fontWeight: "bold", color: "#333" },
+  label: {
+    marginRight: "8px",
+    fontWeight: "bold",
+    color: "#333",
+    fontSize: "16px", // زودت من 14px
+  },
   select: {
-    padding: "6px 10px",
+    padding: "8px 12px", // زودت البادينج
     borderRadius: "6px",
     border: "1px solid #ccc",
+    fontSize: "16px", // زودت من 14px
   },
   button: {
     backgroundColor: "#007bff",
     color: "#fff",
     border: "none",
-    padding: "8px 14px",
+    padding: "10px 16px", // زودت
     borderRadius: "6px",
     cursor: "pointer",
     fontWeight: "bold",
+    fontSize: "16px", // زودت من 14px
   },
-  sectionTitle: { marginBottom: "15px", fontSize: "20px", fontWeight: "bold" },
+  sectionTitle: {
+    marginBottom: "15px",
+    fontSize: "25px", // زودت من 20px
+    fontWeight: "bold",
+  },
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
     gap: "20px",
   },
   card: {
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "#fff",
     borderRadius: "10px",
-    padding: "20px",
+    padding: "25px", // زودت البادينج
     boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
   },
-  name: { fontSize: "18px", fontWeight: "bold", marginBottom: "5px" },
-  role: { fontSize: "14px", fontWeight: "bold", marginBottom: "10px" },
-  mobile: { fontSize: "14px", color: "#333", marginBottom: "8px" },
-  text: { fontSize: "14px", color: "#444", margin: "4px 0" },
+  name: {
+    fontSize: "25px", // زودت من 18px
+    fontWeight: "bold",
+    marginBottom: "6px",
+  },
+  role: {
+    fontSize: "20px", // زودت من 14px
+    fontWeight: "bold",
+    marginBottom: "12px",
+  },
+  mobile: { fontSize: "16px", color: "#333", marginBottom: "10px" },
+  text: { fontSize: "20px", color: "#444", margin: "5px 0" },
   section: {
-    marginTop: "10px",
-    paddingTop: "8px",
+    marginTop: "12px",
+    paddingTop: "10px",
     borderTop: "1px solid #ddd",
   },
   list: { listStyle: "none", padding: 0, margin: 0 },
-  listItem: { fontSize: "13px", color: "#555", marginBottom: "4px" },
+  listItem: { fontSize: "20px", color: "#555", marginBottom: "5px" },
   deleteButton: {
-    marginTop: "10px",
+    marginTop: "12px",
     backgroundColor: "#dc3545",
     color: "#fff",
     border: "none",
-    padding: "6px 12px",
+    padding: "8px 14px", // زودت
     borderRadius: "6px",
     cursor: "pointer",
     fontWeight: "bold",
+    fontSize: "20px", // زودت
   },
 };

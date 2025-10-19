@@ -59,7 +59,7 @@ const AttendanceLogsTable = () => {
     >
       <div
         style={{
-          maxWidth: "1100px",
+          maxWidth: "1300px",
           margin: "0 auto",
           background: "white",
           borderRadius: "16px",
@@ -71,7 +71,7 @@ const AttendanceLogsTable = () => {
         <h2
           style={{
             textAlign: "center",
-            fontSize: "24px",
+            fontSize: "30px",
             fontWeight: "bold",
             color: "#4338ca",
             marginBottom: "24px",
@@ -156,7 +156,7 @@ const AttendanceLogsTable = () => {
                       <td style={tdStyle}>{log.date}</td>
                       <td style={tdStyle}>{log.dayOfWeek}</td>
                       <td style={tdStyle}>{log.time}</td>
-                      <td style={{ ...tdStyle, color: "#4f46e5" }}>
+                      <td style={tdStyle}>
                         {log.workType}
                       </td>
                       <td
@@ -226,24 +226,29 @@ const tableStyle = {
 };
 
 const thStyle = {
-  padding: "10px",
+  padding: "14px 12px", // زيادة البادينج
   border: "1px solid #ddd",
-  fontWeight: "600",
+  fontWeight: "700",
+  fontSize: "20px", // تكبير الخط
+  textAlign: "center",
 };
 
 const tdStyle = {
-  padding: "8px",
+  padding: "12px 10px", // زيادة البادينج
   border: "1px solid #ddd",
+  fontSize: "18px", // تكبير الخط
+  textAlign: "center",
 };
 
 const deleteButtonStyle = {
   backgroundColor: "#dc3545",
   color: "#fff",
   border: "none",
-  padding: "6px 12px",
+  padding: "8px 14px", // زيادة البادينج
   borderRadius: "6px",
   cursor: "pointer",
   fontWeight: "bold",
+  fontSize: "14px", // تكبير الخط
 };
 
 const noDataStyle = {

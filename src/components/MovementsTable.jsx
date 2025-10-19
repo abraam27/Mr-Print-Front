@@ -55,7 +55,7 @@ const MovementsTable = () => {
     >
       <div
         style={{
-          maxWidth: "1100px",
+          maxWidth: "1300px",
           margin: "0 auto",
           background: "white",
           borderRadius: "16px",
@@ -67,7 +67,7 @@ const MovementsTable = () => {
         <h2
           style={{
             textAlign: "center",
-            fontSize: "24px",
+            fontSize: "30px",
             fontWeight: "bold",
             color: "#4338ca",
             marginBottom: "24px",
@@ -160,6 +160,7 @@ const MovementsTable = () => {
                   <th style={thStyle}>Owner</th>
                   <th style={thStyle}>User</th>
                   <th style={thStyle}>Shop</th>
+                  <th style={thStyle}>Comment</th>
                   <th style={thStyle}>Actions</th> {/* Column for Delete */}
                 </tr>
               </thead>
@@ -191,6 +192,7 @@ const MovementsTable = () => {
                       <td style={tdStyle}>{m.ownerName || "-"}</td>
                       <td style={tdStyle}>{m.userName || "-"}</td>
                       <td style={tdStyle}>{m.isShop ? "✔️" : "❌"}</td>
+                      <td style={tdStyle}>{m.comment || "-"}</td>
                       <td style={tdStyle}>
                         <button
                           onClick={() => handleDelete(m._id)}
@@ -246,27 +248,29 @@ const tableStyle = {
 };
 
 const thStyle = {
-  padding: "10px",
+  padding: "14px 12px", // زيادة البادينج
   border: "1px solid #ddd",
-  fontWeight: "600",
-  fontSize: "14px",
+  fontWeight: "700",
+  fontSize: "20px", // تكبير الخط
+  textAlign: "center",
 };
 
 const tdStyle = {
-  padding: "8px",
+  padding: "12px 10px", // زيادة البادينج
   border: "1px solid #ddd",
-  fontSize: "13px",
-  color: "#444",
+  fontSize: "18px", // تكبير الخط
+  textAlign: "center",
 };
 
 const deleteButtonStyle = {
   backgroundColor: "#dc3545",
   color: "#fff",
   border: "none",
-  padding: "6px 12px",
+  padding: "8px 14px", // زيادة البادينج
   borderRadius: "6px",
   cursor: "pointer",
   fontWeight: "bold",
+  fontSize: "14px", // تكبير الخط
 };
 
 const noDataStyle = {

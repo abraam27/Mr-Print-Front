@@ -52,7 +52,7 @@ const ReportPage = () => {
     >
       <div
         style={{
-          maxWidth: "1000px",
+          maxWidth: "1300px",
           margin: "0 auto",
           background: "white",
           borderRadius: "16px",
@@ -63,7 +63,7 @@ const ReportPage = () => {
         <h2
           style={{
             textAlign: "center",
-            fontSize: "28px",
+            fontSize: "30px",
             fontWeight: "bold",
             color: "#4338ca",
             marginBottom: "24px",
@@ -140,7 +140,7 @@ const ReportPage = () => {
         <div>
           <h3
             style={{
-              fontSize: "20px",
+              fontSize: "26px",
               fontWeight: "bold",
               color: "#1e3a8a",
               borderBottom: "2px solid #e0e7ff",
@@ -186,14 +186,14 @@ const renderCard = (title, value, color) => (
       background: "white",
       borderRadius: "12px",
       boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-      padding: "16px",
+      padding: "20px", // زيادة البادينج
       borderLeft: `6px solid ${color}`,
     }}
   >
-    <div style={{ color: "#6b7280", fontSize: "14px", marginBottom: "6px" }}>
+    <div style={{ color: "#6b7280", fontSize: "20px", marginBottom: "8px" }}>
       {title}
     </div>
-    <div style={{ fontSize: "20px", fontWeight: "bold", color }}>{value}</div>
+    <div style={{ fontSize: "25px", fontWeight: "bold", color }}>{value}</div>
   </div>
 );
 
@@ -224,14 +224,16 @@ const centerBox = {
 };
 
 const thStyle = {
-  padding: "10px",
+  padding: "14px 12px",   // زيادة البادينج
   textAlign: "left",
-  fontWeight: "600",
+  fontWeight: "700",
+  fontSize: "20px",        // تكبير الخط
   borderBottom: "1px solid #ddd",
 };
 
 const tdStyle = {
-  padding: "8px 10px",
+  padding: "12px 10px",    // زيادة البادينج
+  fontSize: "18px",        // تكبير الخط
   borderBottom: "1px solid #eee",
 };
 

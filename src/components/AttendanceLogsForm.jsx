@@ -162,61 +162,64 @@ export default function AddAttendanceLogForm() {
 
 const styles = {
   container: {
-    maxWidth: "400px",
+    maxWidth: "500px",      // أكبر من قبل
     margin: "40px auto",
     background: "#fff",
-    padding: "20px",
+    padding: "30px",         // زيادة البادينج
     borderRadius: "12px",
-    boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.15)", // ظل أعمق شوي
     fontFamily: "sans-serif",
   },
   title: {
-    fontSize: "22px",
+    fontSize: "26px",       // تكبير العنوان
     fontWeight: "600",
     textAlign: "center",
-    marginBottom: "20px",
+    marginBottom: "24px",
     color: "#333",
   },
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "12px",
+    gap: "16px",            // زيادة المسافة بين الحقول
   },
   label: {
     display: "block",
-    fontWeight: "500",
+    fontWeight: "600",       // خط أثقل
     color: "#555",
-    marginBottom: "4px",
+    marginBottom: "6px",
+    fontSize: "15px",       // تكبير النص
   },
   input: {
     width: "100%",
-    padding: "8px 10px",
-    borderRadius: "6px",
+    padding: "10px 12px",    // تكبير البادينج
+    borderRadius: "8px",     // حواف أكبر
     border: "1px solid #ccc",
-    fontSize: "14px",
+    fontSize: "16px",        // تكبير النص
   },
   select: {
     width: "100%",
-    padding: "8px 10px",
-    borderRadius: "6px",
+    padding: "10px 12px",    // تكبير البادينج
+    borderRadius: "8px",
     border: "1px solid #ccc",
-    fontSize: "14px",
+    fontSize: "16px",        // تكبير النص
     backgroundColor: "#fff",
   },
   button: {
-    marginTop: "10px",
+    marginTop: "12px",
     backgroundColor: "#007bff",
     color: "#fff",
-    padding: "10px",
+    padding: "12px",         // تكبير الزر
     border: "none",
-    borderRadius: "6px",
+    borderRadius: "8px",
     cursor: "pointer",
     fontWeight: "600",
+    fontSize: "16px",        // تكبير نص الزر
     transition: "0.3s",
   },
   message: {
     textAlign: "center",
-    marginTop: "15px",
-    fontWeight: "500",
+    marginTop: "18px",
+    fontWeight: "600",
+    fontSize: "15px",        // تكبير رسالة النجاح/الفشل
   },
 };

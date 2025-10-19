@@ -62,7 +62,7 @@ const TransactionsCards = () => {
     >
       <div
         style={{
-          maxWidth: "1200px",
+          maxWidth: "1300px",
           margin: "0 auto",
           background: "white",
           borderRadius: "16px",
@@ -74,7 +74,7 @@ const TransactionsCards = () => {
         <h2
           style={{
             textAlign: "center",
-            fontSize: "26px",
+            fontSize: "30px",
             fontWeight: "bold",
             color: "#4338ca",
             marginBottom: "24px",
@@ -120,7 +120,7 @@ const TransactionsCards = () => {
               {/* 🗓️ Day header */}
               <h3
                 style={{
-                  fontSize: "20px",
+                  fontSize: "26px",
                   fontWeight: "bold",
                   color: "#1e3a8a",
                   borderBottom: "2px solid #e0e7ff",
@@ -210,7 +210,7 @@ const TransactionsCards = () => {
                     <button
                       onClick={() => handleDelete(t._id)}
                       disabled={deletingIds.includes(t._id)}
-                      style={deleteButtonStyle}
+                      style={{ ...deleteButtonStyle, marginTop: "auto" }} // هذا هو المهم
                     >
                       {deletingIds.includes(t._id) ? "Deleting..." : "🗑 Delete"}
                     </button>
@@ -246,43 +246,10 @@ const buttonStyle = {
   boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
 };
 
-const cardStyle = {
-  background: "white",
-  borderRadius: "12px",
-  boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
-  padding: "16px",
-  border: "1px solid #e5e7eb",
-  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-};
-
-const cardHeader = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: "12px",
-};
-
-const infoRow = {
-  display: "flex",
-  justifyContent: "space-between",
-  marginBottom: "6px",
-};
-
 const divider = {
   height: "1px",
   background: "#e5e7eb",
   margin: "10px 0",
-};
-
-const deleteButtonStyle = {
-  marginTop: "10px",
-  backgroundColor: "#dc3545",
-  color: "#fff",
-  border: "none",
-  padding: "6px 12px",
-  borderRadius: "6px",
-  cursor: "pointer",
-  fontWeight: "bold",
 };
 
 const noDataStyle = {
@@ -296,6 +263,48 @@ const loadingStyle = {
   textAlign: "center",
   color: "#6b7280",
   fontStyle: "italic",
+};
+
+const cardStyle = {
+  display: "flex",
+  flexDirection: "column",
+  background: "white",
+  borderRadius: "12px",
+  boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
+  padding: "24px",
+  border: "1px solid #e5e7eb",
+  fontSize: "16px",
+  lineHeight: "1.6",
+  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+  minHeight: "220px", // ارتفاع افتراضي للكارت
+};
+
+const cardHeader = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginBottom: "16px", // بدل 12px
+  fontSize: "18px",
+  fontWeight: "600",
+};
+
+const infoRow = {
+  display: "flex",
+  justifyContent: "space-between",
+  marginBottom: "10px", // بدل 6px
+  fontSize: "16px",
+};
+
+const deleteButtonStyle = {
+  marginTop: "14px", // بدل 10px
+  backgroundColor: "#dc3545",
+  color: "#fff",
+  border: "none",
+  padding: "10px 16px", // بدل 6px 12px
+  borderRadius: "6px",
+  cursor: "pointer",
+  fontWeight: "bold",
+  fontSize: "15px",
 };
 
 export default TransactionsCards;
