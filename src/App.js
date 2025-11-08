@@ -77,7 +77,10 @@ export default function App() {
                     <Link to="/create-user" style={styles.quickButton}>
                       ➕ Add User
                     </Link>
-                    <Link to="/create-attendance-log" style={styles.quickButton}>
+                    <Link
+                      to="/create-attendance-log"
+                      style={styles.quickButton}
+                    >
                       ➕ Add Attendance Log
                     </Link>
                     <Link to="/create-movement" style={styles.quickButton}>
@@ -92,7 +95,10 @@ export default function App() {
             />
             <Route path="/create-user" element={<UsersForm />} />
             <Route path="/users" element={<UsersTable />} />
-            <Route path="/create-attendance-log" element={<AttendanceLogsForm />} />
+            <Route
+              path="/create-attendance-log"
+              element={<AttendanceLogsForm />}
+            />
             <Route path="/attendance-logs" element={<AttendanceLogsTable />} />
             <Route path="/create-movement" element={<MovementsForm />} />
             <Route path="/movements" element={<MovementsTable />} />

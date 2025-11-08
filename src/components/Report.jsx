@@ -129,7 +129,7 @@ const ReportPage = () => {
           {renderCard(
             "Expected Difference",
             report.expectedDifference,
-            "#f97316"
+            "#f97316",
           )}
           {renderCard("Gross Profit", report.grossProfit, "#0ea5e9")}
           {renderCard("Given", report.given, "#9333ea")}
@@ -224,16 +224,16 @@ const centerBox = {
 };
 
 const thStyle = {
-  padding: "14px 12px",   // زيادة البادينج
+  padding: "14px 12px", // زيادة البادينج
   textAlign: "left",
   fontWeight: "700",
-  fontSize: "20px",        // تكبير الخط
+  fontSize: "20px", // تكبير الخط
   borderBottom: "1px solid #ddd",
 };
 
 const tdStyle = {
-  padding: "12px 10px",    // زيادة البادينج
-  fontSize: "18px",        // تكبير الخط
+  padding: "12px 10px", // زيادة البادينج
+  fontSize: "18px", // تكبير الخط
   borderBottom: "1px solid #eee",
 };
 

@@ -238,8 +238,8 @@ function renderTotals(totals, role) {
               label.toLowerCase().includes("profit") && Number(value) < 0
                 ? "red"
                 : label.toLowerCase().includes("profit") && Number(value) > 0
-                ? "green"
-                : "#555",
+                  ? "green"
+                  : "#555",
           }}
         >
           <b>{label}:</b> {formatNumber(value, decimals, unit)}

@@ -48,7 +48,7 @@ export default function AddTransactionForm() {
 
       const res = await axios.post(
         "http://localhost:8000/transactions",
-        payload
+        payload,
       );
 
       setMessage("✅ Transaction added successfully!");
@@ -202,16 +202,16 @@ export default function AddTransactionForm() {
 
 const styles = {
   container: {
-    maxWidth: "550px",       // أكبر شوي
+    maxWidth: "550px", // أكبر شوي
     margin: "40px auto",
     background: "#fff",
-    padding: "30px",         // زيادة البادينج
+    padding: "30px", // زيادة البادينج
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
     fontFamily: "sans-serif",
   },
   title: {
-    fontSize: "26px",        // تكبير العنوان
+    fontSize: "26px", // تكبير العنوان
     fontWeight: "600",
     textAlign: "center",
     marginBottom: "24px",
@@ -220,21 +220,21 @@ const styles = {
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "16px",             // مسافة أكبر بين الحقول
+    gap: "16px", // مسافة أكبر بين الحقول
   },
   label: {
     display: "block",
     fontWeight: "600",
     color: "#555",
     marginBottom: "6px",
-    fontSize: "15px",        // تكبير النص
+    fontSize: "15px", // تكبير النص
   },
   input: {
     width: "100%",
-    padding: "10px 12px",    // تكبير البادينج
-    borderRadius: "8px",     // حواف أكبر
+    padding: "10px 12px", // تكبير البادينج
+    borderRadius: "8px", // حواف أكبر
     border: "1px solid #ccc",
-    fontSize: "16px",        // تكبير النص
+    fontSize: "16px", // تكبير النص
   },
   select: {
     width: "100%",
@@ -248,19 +248,18 @@ const styles = {
     marginTop: "12px",
     backgroundColor: "#007bff",
     color: "#fff",
-    padding: "12px",         // تكبير الزر
+    padding: "12px", // تكبير الزر
     border: "none",
     borderRadius: "8px",
     cursor: "pointer",
     fontWeight: "600",
-    fontSize: "16px",        // تكبير نص الزر
+    fontSize: "16px", // تكبير نص الزر
     transition: "0.3s",
   },
   message: {
     textAlign: "center",
     marginTop: "18px",
     fontWeight: "600",
-    fontSize: "15px",        // تكبير رسالة النجاح/الفشل
+    fontSize: "15px", // تكبير رسالة النجاح/الفشل
   },
 };
-

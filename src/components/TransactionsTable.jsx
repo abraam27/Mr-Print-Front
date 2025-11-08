@@ -3,15 +3,24 @@ import axios from "axios";
 
 const TransactionsCards = () => {
   const [transactions, setTransactions] = useState([]);
+  const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingCustomers, setLoadingCustomers] = useState(true);
   const [customerId, setCustomerId] = useState("");
-  const [deletingIds, setDeletingIds] = useState([]); // لمتابعة الحذف
+  const [deletingIds, setDeletingIds] = useState([]);
 
-  const customers = [
-    { id: "68dec11622d4f491df224107", name: "Mena Morid" },
-    { id: "68dec14022d4f491df22412d", name: "Fol" },
-    { id: "68e38218aadb41ef5da0f461", name: "Yasmin" },
-  ];
+  const loadCustomers = async () => {
+    setLoadingCustomers(true);
+    try {
+      const res = await axios.get("http://localhost:8000/users?role=customer");
+      console.log("Loaded customers:", res.data);
+      setCustomers(res.data);
+    } catch (err) {
+      console.error("Error loading customers:", err);
+    } finally {
+      setLoadingCustomers(false);
+    }
+  };
 
   const loadData = async () => {
     setLoading(true);
@@ -26,6 +35,10 @@ const TransactionsCards = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    loadCustomers();
+  }, []);
 
   useEffect(() => {
     loadData();
@@ -100,8 +113,8 @@ const TransactionsCards = () => {
           >
             <option value="">All Customers</option>
             {customers.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
+              <option key={c._id} value={c._id}>
+                {c.firstName} {c.lastName}
               </option>
             ))}
           </select>
@@ -142,7 +155,12 @@ const TransactionsCards = () => {
                 {dailyTransactions.map((t) => (
                   <div key={t._id} style={cardStyle}>
                     <div style={cardHeader}>
-                      <span style={{ fontWeight: "600", color: "#4338ca" }}>
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#4338ca",
+                        }}
+                      >
                         {t.dayOfWeek}
                       </span>
                       <span
@@ -185,7 +203,12 @@ const TransactionsCards = () => {
                       </div>
                       <div>
                         <strong>Expected Paid:</strong>{" "}
-                        <span style={{ color: "#16a34a", fontWeight: "600" }}>
+                        <span
+                          style={{
+                            color: "#16a34a",
+                            fontWeight: "600",
+                          }}
+                        >
                           {t.expectedPaid} EGP
                         </span>
                       </div>
@@ -210,9 +233,14 @@ const TransactionsCards = () => {
                     <button
                       onClick={() => handleDelete(t._id)}
                       disabled={deletingIds.includes(t._id)}
-                      style={{ ...deleteButtonStyle, marginTop: "auto" }} // هذا هو المهم
+                      style={{
+                        ...deleteButtonStyle,
+                        marginTop: "auto",
+                      }} // هذا هو المهم
                     >
-                      {deletingIds.includes(t._id) ? "Deleting..." : "🗑 Delete"}
+                      {deletingIds.includes(t._id)
+                        ? "Deleting..."
+                        : "🗑 Delete"}
                     </button>
                   </div>
                 ))}

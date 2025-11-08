@@ -46,7 +46,7 @@ export default function AddAttendanceLogForm() {
 
       const res = await axios.post(
         "http://localhost:8000/attendance-logs",
-        payload
+        payload,
       );
 
       if (res.status !== 200 && res.status !== 201)
@@ -162,16 +162,16 @@ export default function AddAttendanceLogForm() {
 
 const styles = {
   container: {
-    maxWidth: "500px",      // أكبر من قبل
+    maxWidth: "500px", // أكبر من قبل
     margin: "40px auto",
     background: "#fff",
-    padding: "30px",         // زيادة البادينج
+    padding: "30px", // زيادة البادينج
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.15)", // ظل أعمق شوي
     fontFamily: "sans-serif",
   },
   title: {
-    fontSize: "26px",       // تكبير العنوان
+    fontSize: "26px", // تكبير العنوان
     fontWeight: "600",
     textAlign: "center",
     marginBottom: "24px",
@@ -180,46 +180,46 @@ const styles = {
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "16px",            // زيادة المسافة بين الحقول
+    gap: "16px", // زيادة المسافة بين الحقول
   },
   label: {
     display: "block",
-    fontWeight: "600",       // خط أثقل
+    fontWeight: "600", // خط أثقل
     color: "#555",
     marginBottom: "6px",
-    fontSize: "15px",       // تكبير النص
+    fontSize: "15px", // تكبير النص
   },
   input: {
     width: "100%",
-    padding: "10px 12px",    // تكبير البادينج
-    borderRadius: "8px",     // حواف أكبر
+    padding: "10px 12px", // تكبير البادينج
+    borderRadius: "8px", // حواف أكبر
     border: "1px solid #ccc",
-    fontSize: "16px",        // تكبير النص
+    fontSize: "16px", // تكبير النص
   },
   select: {
     width: "100%",
-    padding: "10px 12px",    // تكبير البادينج
+    padding: "10px 12px", // تكبير البادينج
     borderRadius: "8px",
     border: "1px solid #ccc",
-    fontSize: "16px",        // تكبير النص
+    fontSize: "16px", // تكبير النص
     backgroundColor: "#fff",
   },
   button: {
     marginTop: "12px",
     backgroundColor: "#007bff",
     color: "#fff",
-    padding: "12px",         // تكبير الزر
+    padding: "12px", // تكبير الزر
     border: "none",
     borderRadius: "8px",
     cursor: "pointer",
     fontWeight: "600",
-    fontSize: "16px",        // تكبير نص الزر
+    fontSize: "16px", // تكبير نص الزر
     transition: "0.3s",
   },
   message: {
     textAlign: "center",
     marginTop: "18px",
     fontWeight: "600",
-    fontSize: "15px",        // تكبير رسالة النجاح/الفشل
+    fontSize: "15px", // تكبير رسالة النجاح/الفشل
   },
 };

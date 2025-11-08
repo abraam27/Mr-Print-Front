@@ -4,7 +4,7 @@ import axios from "axios";
 const AttendanceLogsTable = () => {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [month, setMonth] = useState(10);
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(2025);
   const [userId, setUserId] = useState("");
   const [deletingIds, setDeletingIds] = useState([]);
@@ -156,9 +156,7 @@ const AttendanceLogsTable = () => {
                       <td style={tdStyle}>{log.date}</td>
                       <td style={tdStyle}>{log.dayOfWeek}</td>
                       <td style={tdStyle}>{log.time}</td>
-                      <td style={tdStyle}>
-                        {log.workType}
-                      </td>
+                      <td style={tdStyle}>{log.workType}</td>
                       <td
                         style={{
                           ...tdStyle,

@@ -4,7 +4,7 @@ import axios from "axios";
 const MovementsTable = () => {
   const [movements, setMovements] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [month, setMonth] = useState(10);
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(2025);
   const [type, setType] = useState(""); // expense / income / all
   const [isCustomer, setIsCustomer] = useState(""); // true / false / all
