@@ -9,7 +9,7 @@ export default function AddTransactionForm() {
     paperType: "A4",
     paperSales: "",
     expectedPaid: "",
-    status: "pending",
+    status: "finished",
     comment: "",
   });
 
@@ -59,7 +59,7 @@ export default function AddTransactionForm() {
         paperType: "A4",
         paperSales: "",
         expectedPaid: "",
-        status: "pending",
+        status: "finished",
         comment: "",
       });
     } catch (err) {
@@ -131,15 +131,47 @@ export default function AddTransactionForm() {
 
         <div>
           <label style={styles.label}>Paper Sales (per paper):</label>
-          <input
-            type="number"
+          <select
             name="paperSales"
             value={formData.paperSales}
             onChange={handleChange}
-            style={styles.input}
-            step="0.01"
-            required
-          />
+            style={styles.select}
+          >
+            <option value="0.35">0.35</option>
+            <option value="0.40">0.40</option>
+            <option value="0.45">0.45</option>
+            <option value="0.50">0.50</option>
+            <option value="0.55">0.55</option>
+            <option value="0.60">0.60</option>
+            <option value="0.65">0.65</option>
+            <option value="0.70">0.70</option>
+            <option value="0.75">0.75</option>
+            <option value="0.80">0.80</option>
+            <option value="0.85">0.85</option>
+            <option value="0.90">0.90</option>
+            <option value="0.95">0.95</option>
+            <option value="1">1</option>
+            <option value="1.05">1.05</option>
+            <option value="1.10">1.10</option>
+            <option value="1.15">1.15</option>
+            <option value="1.20">1.20</option>
+            <option value="1.25">1.25</option>
+            <option value="1.30">1.30</option>
+            <option value="1.35">1.35</option>
+            <option value="1.40">1.40</option>
+            <option value="1.45">1.45</option>
+            <option value="1.50">1.50</option>
+            <option value="1.55">1.55</option>
+            <option value="1.60">1.60</option>
+            <option value="1.65">1.65</option>
+            <option value="1.70">1.70</option>
+            <option value="1.75">1.75</option>
+            <option value="1.80">1.80</option>
+            <option value="1.85">1.85</option>
+            <option value="1.90">1.90</option>
+            <option value="1.95">1.95</option>
+            <option value="2">2</option>
+          </select>
         </div>
 
         <div>
