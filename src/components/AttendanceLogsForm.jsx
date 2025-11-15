@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function AddAttendanceLogForm() {
   const [formData, setFormData] = useState({
-    date: "",
+    date: new Date().toISOString().split("T")[0],
     time: "morning",
     workType: "shift",
     userId: "",
@@ -54,7 +54,7 @@ export default function AddAttendanceLogForm() {
 
       setMessage("✅ Attendance log added successfully!");
       setFormData({
-        date: "",
+        date: new Date().toISOString().split("T")[0],
         time: "morning",
         workType: "shift",
         userId: "",
