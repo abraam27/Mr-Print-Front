@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
 const MovementsTable = () => {
   const [movements, setMovements] = useState([]);
   const [loading, setLoading] = useState(true);
   const [month, setMonth] = useState(new Date().getMonth() + 1);
-  const [year, setYear] = useState(2025);
+  const [year, setYear] = useState(new Date().getFullYear());
   const [type, setType] = useState(""); // expense / income / all
   const [isCustomer, setIsCustomer] = useState(""); // true / false / all
   const [isShop, setIsShop] = useState(""); // true / false / all
   const [deletingIds, setDeletingIds] = useState([]); // لمتابعة الحذف
 
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     setLoading(true);
     try {
       let url = `http://localhost:8000/movements?month=${month}&year=${year}`;
@@ -26,11 +26,11 @@ const MovementsTable = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [month, year, type, isCustomer, isShop]);
 
   useEffect(() => {
     loadData();
-  }, [month, year, type, isCustomer, isShop]);
+  }, [loadData]);
 
   const handleDelete = async (id) => {
     if (!window.confirm("هل أنت متأكد من حذف هذه الحركة؟")) return;
